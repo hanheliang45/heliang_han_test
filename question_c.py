@@ -14,11 +14,14 @@ when get value by key:
 			return value, at the same time move the node to the head
 			
 offer two main method : get, put
+
+Cache object is flexible, any key-value mapping is ok.
 """
-class Node:
+class Cache_Node:
 	def __init__(self, key, value):
 		self.next = None;
 		self.pre = None;
+		
 		self.key = key;
 		self.value = value;
 
@@ -53,7 +56,7 @@ class LRU_Cache(object):
 			node.value = value;
 			self.__move_to_head(node);
 		else:
-			node = Node(key, value);
+			node = Cache_Node(key, value);
 			#may be a little inefficient, but be more readable
 			#in order to resue the method of "move_to_head"
 			if self.num >= self.capacity:
