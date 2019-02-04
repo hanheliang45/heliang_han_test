@@ -35,7 +35,7 @@ class LRU_Cache(object):
 		self.key_node = {};
 
 	"""
-	is key doesn't exist, return None;
+	if key doesn't exist, return None;
 	"""
 	def get(self, key):
 		if self.capacity == 0:
